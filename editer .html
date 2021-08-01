@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+  <script type="text/javascript" src="edit.js"></script>
+  <link type="text/css" href="style.css" rel="stylesheet">
+  <script type="text/javascript" src="vishal.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+
+  <script type="text/javascript">
+    function changec() {
+      var color = document.getElementById("color").value;
+      document.getElementById("htmlCode").style.color = color;
+    }
+
+    function changef() {
+      var fonts = document.getElementById("fsize").value;
+      font = document.getElementById( 'htmlCode' );
+      font1 = document.getElementById( 'cssCode');
+      font2 = document.getElementById( 'jsCode' );
+      font.style.fontSize = fonts ;
+      font1.style.fontSize = fonts ;
+      font2.style.fontSize = fonts ;
+    }
+
+    $(document).ready(function(){
+  $("#font").hover(function(){
+    $("#font-color").show();
+  });
+});
+
+  </script>
+
+</head>
+
+<body autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <nav id="nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li id="font"><a href="#font">font colour</a></li>
+      <li id="font-color"><a href="#font-color"><input id="color" type="color" oninput="changec()"></a></li>
+      <li><a href="#Mode"><input type="range" id="fsize" onchange="changef()"></a></li>
+      <li style="float:right"><a class="active" href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="preview-area">
+    <iframe id="preview-window"></iframe>
+  </div>
+
+  <div id="code">
+    <textarea id="htmlCode" placeholder="HTML Code" oninput="showPreview()" name="color"></textarea>
+
+    <textarea id="cssCode" placeholder="CSS Code" oninput="showPreview()"></textarea>
+    <textarea id="jsCode" placeholder="JavaScript Code" oninput="showPreview()"></textarea>
+  </div>
+  </div>
+</body>
+
+</html>
